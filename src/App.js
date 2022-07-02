@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Scanner from './components/Scanner/Scanner';
+import { AuthProvider } from './context/AuthContext';
+import 'react-toastify/dist/ReactToastify.css';
+
+// pages
+import PurchaseHistory from './pages/PurchaseHistory/PurchaseHistory';
+import Auth from './pages/Auth/Auth';
+import Scan from './pages/Scan/Scan';
+import Account from './pages/Account/Account';
+import Admin from './pages/Admin';
+
+// global styles
+import { GlobalStyle } from './styles';
+
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GlobalStyle />
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Auth />} />
+            <Route path="/history" exact element={<PurchaseHistory />} />
+            <Route path="/scan" element={<Scan />} />
+            <Route path="/account" element={<Account />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <Admin />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route path="*" element={<div>Not Found Page</div>} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
