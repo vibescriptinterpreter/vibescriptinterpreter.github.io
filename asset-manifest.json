@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/vibescriptinterpreter.github.io/static/css/main.11ad83d9.css",
+    "main.js": "/vibescriptinterpreter.github.io/static/js/main.e6b2b7ff.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/vibescriptinterpreter.github.io/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/scan-card.svg": "/vibescriptinterpreter.github.io/static/media/scan-card.4651cb0812fae7959815724739913a0e.svg",
+    "static/media/history.svg": "/vibescriptinterpreter.github.io/static/media/history.415fb49b855c21c2d635ee45a774ef61.svg",
+    "static/media/apple.svg": "/vibescriptinterpreter.github.io/static/media/apple.8cb4d62b21105a6a661a2d1e84d8a94e.svg",
+    "index.html": "/vibescriptinterpreter.github.io/index.html",
+    "static/media/scan.svg": "/vibescriptinterpreter.github.io/static/media/scan.1593a4bd5252ebdec7e3c4c6923848ad.svg",
+    "static/media/home.svg": "/vibescriptinterpreter.github.io/static/media/home.9568a5c36c6f7f10cf26f0d1e824ff67.svg",
+    "static/media/credit-card.svg": "/vibescriptinterpreter.github.io/static/media/credit-card.1cda5bbd603878f0f838f806c91b5efd.svg",
+    "static/media/arrow-left.svg": "/vibescriptinterpreter.github.io/static/media/arrow-left.fc5ee4e449925741f94dcfa21292a0cc.svg",
+    "static/media/plus.svg": "/vibescriptinterpreter.github.io/static/media/plus.7ee4461bead3e23e1052e2ddbda7363d.svg",
+    "static/media/master-card.svg": "/vibescriptinterpreter.github.io/static/media/master-card.7bf0972b120c93b7c34ba36f44f83b1b.svg",
+    "main.11ad83d9.css.map": "/vibescriptinterpreter.github.io/static/css/main.11ad83d9.css.map",
+    "main.e6b2b7ff.js.map": "/vibescriptinterpreter.github.io/static/js/main.e6b2b7ff.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/vibescriptinterpreter.github.io/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11ad83d9.css",
+    "static/js/main.e6b2b7ff.js"
+  ]
+}
