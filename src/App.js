@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Scanner from './components/Scanner/Scanner';
 import { AuthProvider } from './context/AuthContext';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,9 +21,9 @@ function App() {
     <div>
       <GlobalStyle />
       <AuthProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
-            <Route path="/login" element={<Auth />} />
+            <Route path="/" element={<Auth />} />
             <Route path="/history" exact element={<PurchaseHistory />} />
             <Route path="/scan" element={<Scan />} />
             <Route path="/account" element={<Account />} />
@@ -38,7 +38,7 @@ function App() {
 
             <Route path="*" element={<div>Not Found Page</div>} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </AuthProvider>
     </div>
   );

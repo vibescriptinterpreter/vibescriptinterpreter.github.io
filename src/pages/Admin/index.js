@@ -49,7 +49,7 @@ const AdminPage = () => {
         }
     ]
 
-    const localProducts = fetchProductsApi();
+    const localProducts = JSON.parse(localStorage.getItem('products')) || [];
     let [products, setProducts] = useState(localProducts);
 
 

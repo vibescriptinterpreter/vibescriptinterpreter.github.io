@@ -3,13 +3,14 @@ import Scanner from '../../components/Scanner/Scanner';
 import ProductTooltip from '../../components/ProductTooltip/ProductTooltip'
 import { TooltipWrapper } from './styles';
 import { guidGenerator } from '../../utils'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 
 const Scan = () => {
-  const history = useNavigate();
+  let navigate = useNavigate();
   const [barcode, setBarcode] = useState(null);
   const [product, setProduct] = useState(null);
   const [isShownTooltip, setIsShownTooltip] = useState(false);
+
 
   useEffect(() => {
     if (barcode) {
@@ -22,6 +23,8 @@ const Scan = () => {
       
         if (!purchasingProduct) {
           console.log('Товар не найдет');
+          alert('Товар не найден');
+          
         } else {
           setProduct(purchasingProduct);
         }
@@ -41,22 +44,26 @@ const Scan = () => {
     // make payment
     console.log('make payment');
 
+    const foundProduct = {
+      id: guidGenerator(),
+      category: product.category,
+      name: product.title,
+      price: product.price     
+    }
+
     const purchase = localStorage.getItem('purchase');
 
     if (purchase) {
       const purchaseNext = JSON.parse(purchase);
-      purchaseNext.push({
-        id: guidGenerator(),
-        category: product.category,
-        name: product.title,
-        price: product.price     
-      })
-
+      purchaseNext.push(foundProduct)
       localStorage.setItem('purchase', JSON.stringify(purchaseNext));
-      history('/history');
+    } else {
+      localStorage.setItem('purchase', JSON.stringify([foundProduct]))
     }
-
-
+    
+    setProduct(null);
+    navigate('/history');
+    
     // if success
     setIsShownTooltip(false);
 
